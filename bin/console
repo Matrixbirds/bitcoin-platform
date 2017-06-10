@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+if (require.main === module) {
+  const repl = require('repl');
+  const app = require('../app');
+  const {kit} = app;
+  kit.expose(repl.start(':> ').context, app);
+}
