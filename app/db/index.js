@@ -30,7 +30,7 @@ const meta = ({fs, path}) => {
   } ;
   const db = {};
   fs.readdirSync(current.dir)
-    .filter(fileFormat.call({excludeFile: current.file}, '.js'))
+    .filter(fileFormat.bind({excludeFile: current.file})('.js'))
     .reduce((res, file) => {
       const _module = require(path.join(current.dir, file));
       const name = path.basename(file).split('.js')[0];
