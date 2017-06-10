@@ -19,6 +19,9 @@ else {
     util,
     expose
   };
+  const [fs, path] = [require('fs'), require('path')];
+  const db = require('./db')({fs, path});
+  kit.expose(app, {db});
   module.exports = {
     ['env']: process.env,
     kit,
