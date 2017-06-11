@@ -1,9 +1,10 @@
 'use strict';
 const mongoose = require('mongoose');
 const bluebird = require('bluebird');
+const {env} = require('../config');
 
 mongoose.Promise = bluebird;
-mongoose.connect('mongodb://localhost/bitcoin-platform', {
+mongoose.connect(env.database.entry, {
   promiseLibrary: bluebird
 });
 

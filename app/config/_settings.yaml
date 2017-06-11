@@ -1,0 +1,17 @@
+base: &base
+  NODE_ENV: development
+  database:
+    entry: 'mongodb://localhost/bitcoin-platform-development'
+
+development:
+  <<: *base
+
+test:
+  NODE_ENV: test
+  database:
+    entry: 'mongodb://localhost/bitcoin-platform-test'
+
+production:
+  NODE_ENV: production
+  database:
+    entry: 'mongodb://localhost/bitcoin-platform-production'
