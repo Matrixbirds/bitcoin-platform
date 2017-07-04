@@ -37,7 +37,6 @@ describe('error handling', function () {
       })
   });
   it ('handle async error', function () {
-    console.log('output', output);
     expect(output).to.have.property('msg', 'params missing');
     expect(output).to.have.property('stack', 'stack params missing');
     expect(output).to.have.property('status', '500');
