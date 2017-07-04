@@ -9,6 +9,7 @@ kit.expose(global, {
   expect,
   app,
   request,
+  kit
 });
 process.env.NODE_ENV='test';
 console.log('you are loading spec_helper');
