@@ -11,4 +11,11 @@ nconf
   })
   .env()
   .defaults(APP_ENV);
-module.exports = nconf.get(process.env.NODE_ENV || 'development');
+
+const env = nconf.get(process.env.NODE_ENV || 'development');
+module.exports = {
+  env,
+  isProduction(type) {
+    if(env === 'production') return true;
+  },
+};
