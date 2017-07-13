@@ -35,10 +35,11 @@ const meta = ({fs, path}) => {
     .reduce((res, file) => {
       const _module = require(path.join(current.dir, file));
       const name = path.basename(file).split('.js')[0];
-      res[name] = _module;
+      res[name] = _module(mongoose);
       return res;
     }, db);
   return db;
 };
 
+mongoose.set('debug', true);
 module.exports = meta;
