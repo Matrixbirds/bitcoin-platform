@@ -4,6 +4,6 @@ module.exports = (mongoose, User) => {
     account: String
   });
   const Admin = User.discriminator('admin',
-    schema,
+    schema
   );
 }
